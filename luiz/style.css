@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /* Fundo escuro para destacar o branco */
+    perspective: 1000px;
+    overflow: hidden;
+    user-select: none; /* Impede que selecione texto ao arrastar */
+}
+
+.instruction {
+    position: absolute;
+    top: 20px;
+    color: white;
+    font-family: sans-serif;
+    opacity: 0.6;
+}
+
+.scene {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    transform-style: preserve-3d;
+    cursor: grab;
+}
+
+.scene:active {
+    cursor: grabbing;
+}
+
+.cube {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 1px solid #444; /* Borda escura para ver a divisão */
+    box-sizing: border-box;
+}
+
+/* Faces 3D */
+.front  { transform: translateZ(20px); }
+.back   { transform: rotateY(180deg) translateZ(20px); }
+.left   { transform: rotateY(-90deg) translateZ(20px); }
+.right  { transform: rotateY(90deg) translateZ(20px); }
+.top    { transform: rotateX(90deg) translateZ(20px); }
+.bottom { transform: rotateX(-90deg) translateZ(20px); }
